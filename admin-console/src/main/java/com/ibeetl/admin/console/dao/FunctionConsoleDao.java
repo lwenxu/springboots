@@ -1,5 +1,6 @@
 package com.ibeetl.admin.console.dao;
 
+import org.beetl.sql.core.annotatoin.Param;
 import org.beetl.sql.core.annotatoin.SqlResource;
 import org.beetl.sql.core.engine.PageQuery;
 import org.beetl.sql.core.mapper.BaseMapper;
@@ -14,5 +15,5 @@ public interface FunctionConsoleDao extends BaseMapper<CoreFunction> {
      *
      * @param query
      */
-    public void queryByCondtion(PageQuery query);
+    public void queryByCondtion(@Param("query") PageQuery query);
 }

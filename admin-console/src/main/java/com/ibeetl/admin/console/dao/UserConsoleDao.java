@@ -14,13 +14,13 @@ import java.util.List;
 @SqlResource("console.user")
 public interface UserConsoleDao extends BaseMapper<CoreUser> {
 
-    PageQuery<CoreUser> queryByCondtion(PageQuery<CoreUser> query);
+    PageQuery<CoreUser> queryByCondtion(@Param("query") PageQuery<CoreUser> query);
 
-    void batchDelUserByIds( List<Long> ids);
+    void batchDelUserByIds(@Param("ids") List<Long> ids);
 
-    void batchUpdateUserState(List<Long> ids, GeneralStateEnum state);
+    void batchUpdateUserState(@Param("ids") List<Long> ids,@Param("state") GeneralStateEnum state);
     
-    List<CoreUserRole> queryUserRole( Long id,Long orgId,Long roleId);
+    List<CoreUserRole> queryUserRole(@Param("id") Long id,@Param("orgId") Long orgId,@Param("roleId") Long roleId);
 
 }
 

@@ -1,5 +1,6 @@
 package com.ibeetl.admin.core.dao;
 
+import org.beetl.sql.core.annotatoin.Param;
 import org.beetl.sql.core.annotatoin.SqlResource;
 import org.beetl.sql.core.mapper.BaseMapper;
 
@@ -20,5 +21,5 @@ public interface CoreWorkflowDao extends BaseMapper {
      * @param orgs   机构id
      * @return
      */
-    List<CoreUser> queryUsersByRole(Long roleId, List<Long> orgs);
+    List<CoreUser> queryUsersByRole(@Param("roleId") Long roleId, @Param("orgs") List<Long> orgs);
 }

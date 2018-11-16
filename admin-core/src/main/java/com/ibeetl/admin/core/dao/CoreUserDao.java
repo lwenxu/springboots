@@ -16,7 +16,7 @@ public interface CoreUserDao extends BaseMapper<CoreUser> {
      * @param roleCode 角色编码
      * @return
      */
-    List<CoreUser> getUserByRole( String roleCode);
+    List<CoreUser> getUserByRole(@Param("roleCode") String roleCode);
 
 
 }

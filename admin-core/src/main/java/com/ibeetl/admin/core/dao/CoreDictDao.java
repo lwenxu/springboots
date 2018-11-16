@@ -3,6 +3,7 @@ package com.ibeetl.admin.core.dao;
 import java.util.List;
 import java.util.Map;
 
+import org.beetl.sql.core.annotatoin.Param;
 import org.beetl.sql.core.annotatoin.SqlResource;
 import org.beetl.sql.core.annotatoin.SqlStatement;
 import org.beetl.sql.core.mapper.BaseMapper;
@@ -20,7 +21,7 @@ public interface CoreDictDao extends BaseMapper<CoreDict> {
      * @param type 字典类型
      * @return
      */
-    List<CoreDict> findAllList(String type);
+    List<CoreDict> findAllList(@Param("type") String type);
 
     /**
      * 查询字段类型列表
@@ -28,7 +29,7 @@ public interface CoreDictDao extends BaseMapper<CoreDict> {
      * @return
      */
     @SqlStatement(returnType = Map.class)
-    List<Map<String, String>> findTypeList(int delFlag);
+    List<Map<String, String>> findTypeList(@Param("delFlag") int delFlag);
 
   
 
@@ -37,7 +38,7 @@ public interface CoreDictDao extends BaseMapper<CoreDict> {
      * @param id 父节点id
      * @return
      */
-    List<CoreDict> findChildByParent(Long id);
+    List<CoreDict> findChildByParent(@Param("id") Long id);
 
-    int bathDelByValue(List<String> values);
+    int bathDelByValue(@Param("values") List<String> values);
 }

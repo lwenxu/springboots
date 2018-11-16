@@ -18,8 +18,8 @@ public interface OrgConsoleDao extends BaseMapper<CoreOrg> {
    
  
 
-    void queryByCondtion(PageQuery<CoreOrg> query);
+    void queryByCondtion(@Param("query") PageQuery<CoreOrg> query);
     @SqlStatement(type=SqlStatementType.SELECT)
-    void queryUserByCondtion(PageQuery<CoreUser> query);
+    void queryUserByCondtion(@Param("query") PageQuery<CoreUser> query);
     void batchDelByIds(@Param(value = "ids") List<Long> ids);
 }

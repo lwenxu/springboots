@@ -18,11 +18,11 @@ public interface CoreRoleMenuDao extends BaseMapper<CoreRoleMenu> {
      * @param orgId  机构id
      * @return
      */
-    List<Long> queryMenuByUser( Long userId, Long orgId);
+    List<Long> queryMenuByUser(@Param("userId") Long userId,@Param("orgId") Long orgId);
 
     /**
      * 根据菜单id删除角色和菜单关系
      * @param ids
      */
-    void deleteRoleMenu(List<Long> ids);
+    void deleteRoleMenu(@Param("ids") List<Long> ids);
 }
