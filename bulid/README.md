@@ -8,4 +8,4 @@
 ```bash
 chomd a+x start.sh
 ./start.sh admin-console 80 preview
-```
+``` 
